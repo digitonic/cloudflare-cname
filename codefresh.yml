@@ -1,0 +1,24 @@
+version: "1.0"
+stages:
+- build
+- push
+steps:
+  build_2_12_3:
+    type: build
+    stage: build
+    image_name: codefreshplugins/cfstep-helm
+    build_arguments:
+    - HELM_VERSION=2.12.3
+    tag: 2.12.3-${{CF_SHORT_REVISION}}
+  push_latest:
+    type: push
+    stage: push
+    candidate: ${{build_2_12_3}}
+    registry: dockerhub
+    tags:
+    - latest
+    - 0.1.0
+    when:
+      branch:
+        only:
+        - master

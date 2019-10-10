@@ -1,0 +1,39 @@
+name: cloudflare-cname
+title: Add a cname to a loabalancer based on the branch
+image: digitonic/cloudflare-cname:0.0.1
+tag: 0.1.0
+version: 0.1.0
+description: Based the namespace and it will create a cname in clouflare using the ELB in the web service
+keywords:
+- helm
+sources:
+- https://github.com/digitonic/cloudflare-cname
+maintainers:
+- name: Daniele Bicelli
+icon: https://raw.githubusercontent.com/digitonic/cloudflare-cname/master/icon.jpg
+envs:
+- name: KUBE_CONTEXT
+  type: required
+  description: Kubernetes context to use (the name of the cluster as configured in
+    Codefresh) (required)
+- name: CLOUD_FLARE_EMAIL
+  type: required
+  description: The email in cloudflare
+- name: CLOUD_FLARE_API_KEY
+  type: required
+  description: The api in cloudfare
+- name: CLOUD_FLARE_ZONE
+  type: required
+  description: The zone id of the domain in cloudflare
+- name: RECORD_DOMAIN
+  type: required
+  description: The suffix of the domain for example digitonic.co.uk
+- name: DEPLOYMENT
+  type: required
+  description: Name of the deployment typically web
+- name: NAMESPACE
+  type: required
+  description: Namespace of the deployment.
+- name: RECORD_NAME
+  type: required
+  description: Value that will be used as record name use CF_BRANCH_TAG_NORMALIZED.

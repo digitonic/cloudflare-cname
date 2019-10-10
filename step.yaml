@@ -1,0 +1,104 @@
+kind: step-type
+version: '1.0'
+metadata:
+  name: cloudflare-cname
+  version: 0.0.1
+  isPublic: false
+  description: Add a cname to a loabalancer based on the branch
+  sources:
+    - 'https://github.com/digitonic/cloudflare-cname'
+  stage: incubating
+  maintainers:
+    - name: Daniele Bicelli
+  categories:
+    - featured
+  official: false
+  tags: []
+  icon:
+    type: image
+    size:
+      large:
+        url: >-
+          https://cdn.jsdelivr.net/gh/codefresh-io/steps/incubating/helm/icon.jpg
+  examples:
+    - description: example-1
+      workflow:
+        version: '1.0'
+        steps:
+          deploy:
+            type: cloudflare-cname
+            arguments:
+              KUBE_CONTEXT: ${{KUBE_CONTEXT}}
+              CLOUD_FLARE_EMAIL: ${{CLOUD_FLARE_EMAIL}}
+              CLOUD_FLARE_API_KEY: ${{CLOUD_FLARE_API_KEY}}
+              CLOUD_FLARE_ZONE: ${{CLOUD_FLARE_ZONE}}
+              RECORD_DOMAIN: ${{RECORD_DOMAIN}}
+              NAMESPACE: ${{NAMESPACE}}
+              DEPLOYMENT: ${{DEPLOYMENT}}
+              RECORD_NAME: ${{RECORD_NAME}}
+spec:
+  arguments: |-
+    {
+        "definitions": {},
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "additionalProperties": false,
+        "patterns": [],
+        "required": [
+            "KUBE_CONTEXT",
+            "CLOUD_FLARE_EMAIL",
+            "CLOUD_FLARE_API_KEY",
+            "CLOUD_FLARE_ZONE",
+            "RECORD_DOMAIN",
+            "NAMESPACE",
+            "DEPLOYMENT",
+            "RECORD_NAME"
+        ],
+        "properties": {
+            "KUBE_CONTEXT": {
+                "type": "string",
+                "description": "Kubernetes context to use (the name of the cluster as configured in Codefresh) (required)"
+            },
+            "CLOUD_FLARE_EMAIL": {
+                "type": "string",
+                "description": "The email in cloudflare"
+            },
+            "CLOUD_FLARE_API_KEY": {
+                "type": "string",
+                "description": "The api in cloudfare"
+            },
+            "CLOUD_FLARE_ZONE": {
+                "type": "string",
+                "description": "The zone id of the domain in cloudflare"
+            },
+            "RECORD_DOMAIN": {
+                "type": "string",
+                "description": "The suffix of the domain for example digitonic.co.uk"
+            },
+            "NAMESPACE": {
+                "type": "string",
+                "description": "Namespace of the deployment"
+            },
+            "DEPLOYMENT": {
+                "type": "string",
+                "description": "Name of the deployment typically web"
+            },
+            "RECORD_NAME": {
+                "type": "string",
+                "description": "Value that will be used as record name use CF_BRANCH_TAG_NORMALIZED."
+            }
+        }
+    }
+  steps:
+    main:
+      name: helm
+      image: 'digitonic/cloudflare-cname:0.1.0'
+      environment:
+        - 'KUBE_CONTEXT=${{KUBE_CONTEXT}}'
+        - 'CLOUD_FLARE_EMAIL=${{CLOUD_FLARE_EMAIL}}'
+        - 'CLOUD_FLARE_API_KEY=${{CLOUD_FLARE_API_KEY}}'
+        - 'CLOUD_FLARE_ZONE=${{CLOUD_FLARE_ZONE}}'
+        - 'RECORD_DOMAIN=${{RECORD_DOMAIN}}'
+        - 'NAMESPACE=${{NAMESPACE}}'
+        - 'DEPLOYMENT=${{DEPLOYMENT}}'
+        - 'RECORD_NAME=${{RECORD_NAME}}'

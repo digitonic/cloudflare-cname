@@ -1,0 +1,36 @@
+# General
+bin/*
+.DS_Store
+yarn-error.log
+Homestead.json
+Homestead.yaml
+npm-debug.log
+/.vagrant
+
+# Composer
+/vendor
+
+# Frontend
+.sass-cache/*
+*.css.map
+node_modules
+
+# Project
+.idea
+.env
+public/hot
+public/js
+public/css
+public/fonts
+public/storage
+public/mix-manifest.json
+public/mix.*.js
+public/img
+public/vendor
+resources/assets/js/vendor/laroute
+/storage/*.key
+
+.phpstorm.meta.php
+_ide_helper.php
+
+app/Http/Controllers/DashboardController.php
