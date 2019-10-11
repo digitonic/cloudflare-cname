@@ -6,7 +6,7 @@ steps:
   build_latest:
     type: build
     stage: build
-    image_name: digitonic/cloudflare-cname
+    image_name: digitonic1/cloudflare-cname
     tag: latest
   push_latest:
     type: push
