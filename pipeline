@@ -1,2 +1,4 @@
 #!/bin/bash
-docker build . -t digitonic1/cloudflare-cname:latest
+bash build
+bash push
+bash deploy

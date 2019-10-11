@@ -16,6 +16,5 @@ COPY . /app
 WORKDIR /app
 
 RUN chmod +x /app/main.sh
-RUN chmod +x /app/cloudflare_update_or_create.sh
 
 ENTRYPOINT ["/app/main.sh"]
