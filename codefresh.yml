@@ -7,6 +7,7 @@ steps:
     type: build
     stage: build
     image_name: digitonic1/cloudflare-cname
+    dockerfile: "Dockerfile"
     tag: latest
   push_latest:
     type: push
