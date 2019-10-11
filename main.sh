@@ -22,4 +22,3 @@ echo $elb_value
 
 export RECORD_VALUE=$elb_value
 
-bash ./cloudflare_update_or_create.sh

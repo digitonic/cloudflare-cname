@@ -1,0 +1,3 @@
+#!/bin/bash
+codefresh delete step-type digitonic/cloudflare-cname
+codefresh create step-type -f step.yaml

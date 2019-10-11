@@ -3,7 +3,7 @@ version: '1.0'
 metadata:
   name: digitonic/cloudflare-cname
   version: 0.0.1
-  isPublic: true
+  isPublic: false
   description: Add a cname to a loabalancer based on the branch
   sources:
     - 'https://github.com/digitonic/cloudflare-cname'
@@ -92,7 +92,7 @@ spec:
   steps:
     main:
       name: helm
-      image: 'digitonic/cloudflare-cname:0.1.0'
+      image: 'digitonic1/cloudflare-cname:latest'
       environment:
         - 'KUBE_CONTEXT=${{KUBE_CONTEXT}}'
         - 'CLOUD_FLARE_EMAIL=${{CLOUD_FLARE_EMAIL}}'

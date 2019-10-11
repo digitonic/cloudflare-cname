@@ -1,2 +1,4 @@
 #!/bin/bash
-docker build . -t cloudlfare
+bash build
+bash push
+bash deploy
