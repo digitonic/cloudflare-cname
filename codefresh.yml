@@ -3,21 +3,31 @@ stages:
 - build
 - push
 steps:
-  build_latest:
-    type: build
-    stage: build
-    image_name: digitonic1/cloudflare-cname
+  clone:
+    description: "Cloning main repository..."
+    type: "git-clone"
+    repo: "digitonic/cloudflare-cname"
+    revision: "${{CF_BRANCH}}"
+    stage: "build"
+  build:
+    title: "Building Docker Image"
+    type: "build"
+    image_name: "digitonic/website"
+    tag: "master"
     dockerfile: "Dockerfile"
-    tag: latest
-  push_latest:
+    build_arguments:
+    stage: "build"
+  push:
     type: push
-    stage: push
-    candidate: ${{build_latest}}
-    registry: dockerhub
+    arguments:
+      candidate: '${{build}}'
+      tag: '${{CF_REVISION}}'
+      image_name: "digitonic1/website"
+      registry: 'dockerhub'
+    stage: "push"
     tags:
-    - latest
-    - 0.1.0
+      - latest
     when:
       branch:
         only:
-        - master
+          - master
