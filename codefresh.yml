@@ -21,7 +21,7 @@ steps:
     arguments:
       candidate: '${{build}}'
       tag: 'master'
-      image_name: "digitonic1/website"
+      image_name: "digitonic1/cloudflare-cname:"
       registry: 'dockerhub'
     stage: "push"
     tags:
