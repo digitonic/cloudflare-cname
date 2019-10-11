@@ -1,2 +1,3 @@
 #!/bin/bash
+
 docker push digitonic1/cloudflare-cname:latest
