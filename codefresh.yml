@@ -1,7 +1,7 @@
 version: "1.0"
 stages:
-- "build"
-- "push"
+  - "build"
+  - "push"
 steps:
   main_clone:
     description: "Cloning main repository..."
@@ -21,7 +21,7 @@ steps:
     arguments:
       candidate: '${{build}}'
       tag: 'master'
-      image_name: "digitonic1/cloudflare-cname:"
+      image_name: "digitonic1/cloudflare-cname"
       registry: 'dockerhub'
     stage: "push"
     tags:

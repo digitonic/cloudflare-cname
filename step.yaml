@@ -3,8 +3,8 @@ version: '1.0'
 metadata:
   name: digitonic/cloudflare-cname
   version: 0.0.1
-  isPublic: false
-  description: Add a cname to a loabalancer based on the branch
+  isPublic: true
+  description: Based the namespace and it will create a cname in clouflare using the ELB in the web service
   sources:
     - 'https://github.com/digitonic/cloudflare-cname'
   stage: incubating
