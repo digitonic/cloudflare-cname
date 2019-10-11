@@ -3,7 +3,7 @@ stages:
 - "build"
 - "push"
 steps:
-  clone:
+  main_clone:
     description: "Cloning main repository..."
     type: "git-clone"
     repo: "digitonic/cloudflare-cname"
@@ -12,7 +12,7 @@ steps:
   build:
     title: "Building Docker Image"
     type: "build"
-    image_name: "digitonic/website"
+    image_name: "digitonic/cloudflare-cname"
     tag: "master"
     dockerfile: "Dockerfile"
     stage: "build"
