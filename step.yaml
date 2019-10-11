@@ -1,9 +1,9 @@
 kind: step-type
 version: '1.0'
 metadata:
-  name: cloudflare-cname
+  name: digitonic/cloudflare-cname
   version: 0.0.1
-  isPublic: false
+  isPublic: true
   description: Add a cname to a loabalancer based on the branch
   sources:
     - 'https://github.com/digitonic/cloudflare-cname'
@@ -25,7 +25,7 @@ metadata:
       workflow:
         version: '1.0'
         steps:
-          deploy:
+          cloudflare:
             type: cloudflare-cname
             arguments:
               KUBE_CONTEXT: ${{KUBE_CONTEXT}}

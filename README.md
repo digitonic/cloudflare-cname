@@ -1,2 +1,3 @@
 This Docker image is being used by the Codefresh Helm step.
-See documentation here: [https://codefresh.io/docs/docs/new-helm/using-helm-in-codefresh-pipeline/](https://codefresh.io/docs/docs/new-helm/using-helm-in-codefresh-pipeline/)
+
+To purpose of this step is to get the service load balancer and create a cname with the name of the branch in cloudflare.

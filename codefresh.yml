@@ -3,17 +3,15 @@ stages:
 - build
 - push
 steps:
-  build_2_12_3:
+  build_latest:
     type: build
     stage: build
-    image_name: codefreshplugins/cfstep-helm
-    build_arguments:
-    - HELM_VERSION=2.12.3
-    tag: 2.12.3-${{CF_SHORT_REVISION}}
+    image_name: digitonic/cloudflare-cname
+    tag: latest
   push_latest:
     type: push
     stage: push
-    candidate: ${{build_2_12_3}}
+    candidate: ${{build_latest}}
     registry: dockerhub
     tags:
     - latest
