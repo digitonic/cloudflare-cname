@@ -19,13 +19,14 @@ metadata:
     size:
       large:
         url: >-
-          https://cdn.jsdelivr.net/gh/codefresh-io/steps/incubating/helm/icon.jpg
+          https://cdn-codefresh-steps.s3-eu-west-1.amazonaws.com/cf-logo-v-rgb-rev.png
   examples:
     - description: example-1
       workflow:
         version: '1.0'
         steps:
           cloudflare:
+            stage: "deploy"
             type: cloudflare-cname
             arguments:
               KUBE_CONTEXT: ${{KUBE_CONTEXT}}
@@ -91,7 +92,7 @@ spec:
     }
   steps:
     main:
-      name: helm
+      name: cloudflare-cname
       image: 'digitonic1/cloudflare-cname:latest'
       environment:
         - 'KUBE_CONTEXT=${{KUBE_CONTEXT}}'

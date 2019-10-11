@@ -10,7 +10,7 @@ sources:
 - https://github.com/digitonic/cloudflare-cname
 maintainers:
 - name: Daniele Bicelli
-icon: https://raw.githubusercontent.com/digitonic/cloudflare-cname/master/icon.jpg
+icon: https://raw.githubusercontent.com/digitonic/cloudflare-cname/master/icon.svg
 envs:
 - name: KUBE_CONTEXT
   type: required
