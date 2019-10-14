@@ -18,7 +18,7 @@ error_exit()
 
 echo "[Cloudflare] Move to the right namespace"
 
-kubectl config use-context $KUBE_CONTEXT
+kubectl config use-context "$KUBE_CONTEXT"
 
 echo "[Cloudflare] Get the LoadBalancer"
 
