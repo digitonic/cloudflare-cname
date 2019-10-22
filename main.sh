@@ -30,7 +30,7 @@ export record_value=$elb_value
 
 echo "[Cloudflare] Update or create the elb"
 
-record_search="$record_name.$record_domain"
+record_search="$record_name$record_domain"
 
 echo "[Cloudflare] Starting checks"
 
