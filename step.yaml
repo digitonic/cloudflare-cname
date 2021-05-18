@@ -91,7 +91,7 @@ spec:
                 "description": "Overrider Name of the deployment typically web"
             },
             "DELETE_RECORD": {
-                "type": "string",
+                "type": "number",
                 "description": "If set step will delete a record rather than adding it"
             },
             "RECORD_NAME": {
