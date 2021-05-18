@@ -31,9 +31,15 @@ envs:
 - name: DEPLOYMENT
   type: required
   description: Name of the deployment typically web
+- name: DEPLOYMENT_TARGET
+  type: optional
+  description: Override Name of the deployment typically api
 - name: NAMESPACE
   type: required
   description: Namespace of the deployment.
 - name: RECORD_NAME
   type: required
   description: Value that will be used as record name use CF_BRANCH_TAG_NORMALIZED.
+- name: DELETE_STEP
+  type: optional
+  description: If set step will delete a record rather than adding it.
