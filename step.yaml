@@ -37,7 +37,7 @@ metadata:
               NAMESPACE: ${{NAMESPACE}}
               DEPLOYMENT: ${{DEPLOYMENT}}
               DEPLOYMENT_TARGET: ${{DEPLOYMENT_TARGET}}
-              DELETE_STEP: ${{DELETE_STEP}}
+              DELETE_RECORD: ${{DELETE_RECORD}}
               RECORD_NAME: ${{RECORD_NAME}}
 spec:
   arguments: |-
@@ -90,7 +90,7 @@ spec:
                 "type": "string",
                 "description": "Overrider Name of the deployment typically web"
             },
-            "DELETE_STEP": {
+            "DELETE_RECORD": {
                 "type": "string",
                 "description": "If set step will delete a record rather than adding it"
             },
@@ -113,4 +113,4 @@ spec:
         - 'NAMESPACE=${{NAMESPACE}}'
         - 'DEPLOYMENT=${{DEPLOYMENT}}'
         - 'RECORD_NAME=${{RECORD_NAME}}'
-        - 'DELETE_STEP=${{DELETE_STEP}}'
+        - 'DELETE_RECORD=${{DELETE_RECORD}}'

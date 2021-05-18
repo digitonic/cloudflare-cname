@@ -40,6 +40,6 @@ envs:
 - name: RECORD_NAME
   type: required
   description: Value that will be used as record name use CF_BRANCH_TAG_NORMALIZED.
-- name: DELETE_STEP
+- name: DELETE_RECORD
   type: optional
   description: If set step will delete a record rather than adding it.
