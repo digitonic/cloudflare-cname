@@ -103,7 +103,7 @@ spec:
   steps:
     main:
       name: cloudflare-cname
-      image: 'digitonic1/cloudflare-cname:latest'
+      image: 'digitonic/cloudflare-cname:latest'
       environment:
         - 'KUBE_CONTEXT=${{KUBE_CONTEXT}}'
         - 'CLOUD_FLARE_EMAIL=${{CLOUD_FLARE_EMAIL}}'
